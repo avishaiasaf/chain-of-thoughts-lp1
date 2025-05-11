@@ -1,0 +1,675 @@
+/* Syllabus Page Specific Styles */
+
+/* Header and Hero Section */
+.syllabus-header {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    padding-bottom: 0;
+}
+
+.logo h1 a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.syllabus-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.syllabus-hero {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: var(--white);
+    padding: 3rem 2rem 4rem;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    position: relative;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.syllabus-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.highlight {
+    color: #f9c846;
+    font-weight: 700;
+}
+
+.workshop-badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #f9c846;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.workshop-badge i {
+    margin-right: 0.5rem;
+}
+
+.workshop-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+}
+
+.meta-item i {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Content Sections */
+section {
+    margin-bottom: 3rem;
+}
+
+.content-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--box-shadow);
+    margin-top: 3rem;
+}
+
+section h2 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+/* Workshop Overview */
+.workshop-overview p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Workshop Objectives */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.objective-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.objective-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.objective-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.objective-icon i {
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.objective-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Workshop Agenda */
+.agenda-part {
+    margin-bottom: 3rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.agenda-header {
+    background: linear-gradient(135deg, var(--primary-color), #5a74e2);
+    color: var(--white);
+    padding: 1.5rem;
+    position: relative;
+}
+
+.part-label {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.agenda-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.time-label {
+    font-weight: normal;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.agenda-section {
+    padding: 1.5rem 1.5rem 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.agenda-section:last-child {
+    border-bottom: none;
+}
+
+.agenda-section h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.agenda-section ul {
+    padding-left: 1.5rem;
+}
+
+.agenda-section li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.use-cases > li {
+    margin-bottom: 1.5rem;
+}
+
+.use-case-title {
+    font-weight: 600;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Bonus Section */
+.tool-comparison {
+    margin-bottom: 3rem;
+}
+
+.tool-comparison h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.customization-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.customization-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.customization-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+}
+
+.customization-item p {
+    line-height: 1.6;
+}
+
+/* Benefits Section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.benefit-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Add-ons Section */
+.add-ons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.add-on-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.add-on-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.add-on-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+}
+
+.add-on-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.add-on-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.add-on-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section .content-container {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    margin-bottom: 2rem;
+}
+
+.cta-section h2::after {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.cta-section .primary-button {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+.cta-section .primary-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Styles for AI Mastery Bootcamp */
+.agenda-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.difficulty-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+.difficulty-badge.beginner {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.difficulty-badge.intermediate {
+    background-color: #FF9800;
+    color: white;
+}
+
+.difficulty-badge.advanced {
+    background-color: #F44336;
+    color: white;
+}
+
+.final-session {
+    background: linear-gradient(135deg, #5a74e2, var(--accent-color));
+}
+
+.session-topics {
+    list-style: none;
+    padding: 0;
+}
+
+.session-topics li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.session-topics i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-right: 1rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.session-topics div {
+    flex: 1;
+}
+
+.session-topics h4 {
+    margin-bottom: 0.25rem;
+}
+
+.session-topics p {
+    margin: 0;
+    color: var(--light-text);
+}
+
+/* Course Outcomes Section */
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.outcome-card {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.outcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.outcome-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+}
+
+.outcome-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.outcome-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.outcome-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--light-text);
+}
+
+/* Testimonial Highlight */
+.highlight-testimonial {
+    background-color: #f8f9fa;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    position: relative;
+    text-align: center;
+}
+
+.highlight-testimonial::before {
+    content: '\201C';
+    font-size: 8rem;
+    position: absolute;
+    top: -1rem;
+    left: 2rem;
+    color: rgba(67, 97, 238, 0.1);
+    font-family: serif;
+}
+
+.highlight-testimonial p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+
+.highlight-testimonial .testimonial-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highlight-testimonial .testimonial-author img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 3px solid var(--primary-color);
+}
+
+.highlight-testimonial .testimonial-author h4 {
+    margin-bottom: 0.25rem;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.highlight-testimonial .testimonial-author p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-style: normal;
+}
+
+/* Certification Section */
+.certification-details {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.certification-image {
+    flex: 1;
+    max-width: 400px;
+}
+
+.certification-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.certification-info {
+    flex: 1;
+}
+
+.certification-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.certification-info ul {
+    margin-bottom: 1.5rem;
+}
+
+.certification-info li {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .syllabus-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .content-container {
+        padding: 2rem;
+    }
+    
+    .certification-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .certification-image {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .syllabus-hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .workshop-meta {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .objectives-grid,
+    .customization-items,
+    .benefits-grid,
+    .add-ons-grid,
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-container {
+        padding: 1.5rem;
+    }
+    
+    section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .difficulty-badge {
+        position: static;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    .highlight-testimonial {
+        padding: 2rem 1.5rem;
+    }
+    
+    .highlight-testimonial p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .syllabus-hero {
+        padding: 2rem 1rem 3rem;
+    }
+    
+    .syllabus-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .meta-item {
+        width: 100%;
+    }
+    
+    .highlight-testimonial::before {
+        font-size: 5rem;
+        top: -0.5rem;
+        left: 1rem;
+    }
+} 
