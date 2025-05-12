@@ -192,15 +192,18 @@
         <h2>Contact Us</h2>
         <div class="contact-container">
             <div class="contact-form">
-                <form id="enrollmentForm">
+                <form id="enrollmentForm" action="https://formsubmit.co/avishai@solutionlabtech.com" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
+                    <input type="hidden" name="_subject" value="New submission!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://ai.solutionlabtech.com">
                     <!-- <div class="form-group">
                         <label for="course">Interested In</label>
                         <select id="course" name="course">
@@ -213,7 +216,7 @@
                     </div> -->
                     <div class="form-group">
                         <label for="message">Message (Optional)</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="submit-button">Submit</button>
                 </form>
@@ -284,7 +287,7 @@
         });
 
         // Form submission (placeholder - would need backend connection)
-        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+        /*document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Collect form data
             const formData = new FormData(this);
@@ -300,15 +303,19 @@
             const password = '8EvJ6jH8vSUaFtxd9E0zcgUEGUa084';
             const base64Credentials = btoa(username + ':' + password);
             
-            // Send HTTP request with Basic Auth
-            const form_url = 'https://at.solutionlabtech.com/webhook-test/8deb8b93-3608-43ec-9800-34c970667cd8';
+            // Convert form data to URL parameters
+            const params = new URLSearchParams();
+            for (const key in formObject) {
+                params.append(key, formObject[key]);
+            }
+            
+            // Send HTTP GET request with Basic Auth
+            const form_url = `https://at.solutionlabtech.com/webhook-test/8deb8b93-3608-43ec-9800-34c970667cd8?${params.toString()}`;
             fetch(form_url, {
-                method: 'POST',
+                method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': 'Basic ' + base64Credentials
-                },
-                body: JSON.stringify(formObject)
+                }
             })
             .then(response => {
                 if (!response.ok) {
@@ -324,7 +331,7 @@
             });
             alert('Thank you for your interest! We will contact you shortly.');
             this.reset();
-        });
+        });*/
     </script>
 </body>
 </html> 
