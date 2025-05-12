@@ -20,7 +20,6 @@
                 <a href="#home">Home</a>
                 <a href="#courses">Courses</a>
                 <a href="#instructors">Instructors</a>
-                <a href="#testimonials">Testimonials</a>
                 <a href="#contact" class="cta-button">Get Started</a>
             </div>
             <div class="menu-toggle">
@@ -112,10 +111,10 @@
                 <h3>Yoni Ben Haim</h3>
                 <p class="instructor-title">AI Solutions Architect</p>
                 <p class="instructor-bio">With over a decade of experience in AI implementation, Yoni specializes in building scalable AI systems that solve real business problems.</p>
-                <div class="social-links">
+                <!-- <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
+                </div> -->
             </div>
 
             <div class="instructor-card">
@@ -125,15 +124,15 @@
                 <h3>Avishai Asaf</h3>
                 <p class="instructor-title">LLM & AI Tools Expert</p>
                 <p class="instructor-bio">Avishai has pioneered innovative approaches to AI automation and helped countless organizations leverage AI for competitive advantage.</p>
-                <div class="social-links">
+                <!-- <div class="social-links">
                     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials">
+    <!-- <section id="testimonials" class="testimonials">
         <h2>What Our Students Say</h2>
         <div class="testimonials-slider">
             <div class="testimonial">
@@ -173,22 +172,21 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section id="cta" class="cta">
+    <!-- <section id="cta" class="cta">
         <div class="cta-content">
             <h2>Ready to Master AI?</h2>
             <p>Join thousands of students who have accelerated their careers with our expert-led courses</p>
             <a href="#contact" class="primary-button">Get Started Today</a>
         </div>
         <div class="cta-video">
-            <!-- Video placeholder -->
             <div class="video-placeholder">
                 <i class="fas fa-play-circle"></i>
                 <p>See student success stories</p>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
@@ -203,7 +201,7 @@
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="course">Interested In</label>
                         <select id="course" name="course">
                             <option value="">Select a course</option>
@@ -212,7 +210,7 @@
                             <option value="prompt">Advanced Prompt Engineering</option>
                             <option value="all">All Courses</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="message">Message (Optional)</label>
                         <textarea id="message" name="message" rows="4"></textarea>
@@ -220,7 +218,7 @@
                     <button type="submit" class="submit-button">Submit</button>
                 </form>
             </div>
-            <div class="contact-info">
+            <!-- <div class="contact-info">
                 <h3>Have Questions?</h3>
                 <p>We're here to help you choose the right course for your goals and answer any questions about our programs.</p>
                 <div class="contact-methods">
@@ -233,7 +231,7 @@
                         <a href="tel:+123456789">+1 (234) 567-89</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -249,10 +247,9 @@
                     <a href="#home">Home</a>
                     <a href="#courses">Courses</a>
                     <a href="#instructors">Instructors</a>
-                    <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <div class="footer-section">
+                <!-- <div class="footer-section">
                     <h4>Follow Us</h4>
                     <div class="social-links">
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -260,7 +257,7 @@
                         <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="footer-bottom">
@@ -289,6 +286,42 @@
         // Form submission (placeholder - would need backend connection)
         document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            // Collect form data
+            const formData = new FormData(this);
+            const formObject = {};
+            
+            // Convert FormData to object
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Create Basic Auth header
+            const username = process.env.USERNAME;
+            const password = process.env.PASSWORD;
+            const base64Credentials = btoa(username + ':' + password);
+            
+            // Send HTTP request with Basic Auth
+            const form_url = process.env.FORM_URL;
+            fetch(form_url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic ' + base64Credentials
+                },
+                body: JSON.stringify(formObject)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
             alert('Thank you for your interest! We will contact you shortly.');
             this.reset();
         });
