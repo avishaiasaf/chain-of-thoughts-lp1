@@ -296,12 +296,12 @@
             });
             
             // Create Basic Auth header
-            const username = process.env.USERNAME;
-            const password = process.env.PASSWORD;
+            const username = 'chain-of-thoughts-landing-page';
+            const password = '8EvJ6jH8vSUaFtxd9E0zcgUEGUa084';
             const base64Credentials = btoa(username + ':' + password);
             
             // Send HTTP request with Basic Auth
-            const form_url = process.env.FORM_URL;
+            const form_url = 'https://at.solutionlabtech.com/webhook-test/8deb8b93-3608-43ec-9800-34c970667cd8';
             fetch(form_url, {
                 method: 'POST',
                 headers: {
